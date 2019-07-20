@@ -1,0 +1,38 @@
+<div class="album py-5 bg-light">
+      <div class="container">
+    	  <div class="row">
+		  {% comment %} for 뒤에 변수에 어떤게 들어와도 상관없지만 밑에도 바꿔줘야함. {% endcomment %}
+    	  {% for asdd in portfolios.all %}
+    	    <div class="col-md-4">
+    	      <div class="card mb-4 shadow-sm">
+    	        <img class="card-img-top" src="{{ asdd.image.url }}" alt=" Card image cap">
+    	        <div class="card-body">
+    	          <h4>{{ asdd.title }}</h4>
+    	          <p class="card-text">{{ asdd.description }}</p>
+    	        </div>
+    	      </div>
+    	    </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+<br>
+<br>
+<div class="album py-5 bg-light">
+      <div class="container">
+    	  <div class="row">
+    	  {% for blog in blogs.all %}
+    	    <div class="col-md-4">
+    	      <div class="card mb-4 shadow-sm">
+    	        <div class="card-body">
+    	          <h4>{{ blog.title }}</h4>
+    	          <p class="card-text">{{ blog.body }}</p>
+    	        </div>
+    	      </div>
+    	    </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+<br><br>
+<a href= "{% url 'new' %}">댓글</a>
